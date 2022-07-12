@@ -5,12 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class AppActual {
 
-    private static final Logger logger = LogManager.getLogger();
-
-    private static final StackTraceElement[] locations = {
-            new StackTraceElement("lala", "bala", "cala", 123),
-            new StackTraceElement("momo", "bomo", "como", 145)
-    };
+    private static Logger logger = LogManager.getLogger();
 
     public static void main(String[] args) {
         System.out.println("should log at line 12");

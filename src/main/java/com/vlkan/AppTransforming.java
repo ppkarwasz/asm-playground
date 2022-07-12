@@ -74,6 +74,7 @@ public class AppTransforming {
                     generator.dup();
                     generator.push(i);
                     generator.newInstance(STACK_TRACE_ELEMENT);
+                    generator.dup();
                     generator.push(location.getClassName());
                     generator.push(location.getMethodName());
                     generator.push(location.getFileName());
@@ -82,6 +83,8 @@ public class AppTransforming {
                     generator.arrayStore(STACK_TRACE_ELEMENT);
                 }
                 generator.putStatic(Type.getType("L" + className.replace(".", "/") + ";"), LOCATIONS_FIELD, STACK_TRACE_ARRAY);
+                generator.returnValue();
+                generator.endMethod();
                 super.visitEnd();
             }
 
