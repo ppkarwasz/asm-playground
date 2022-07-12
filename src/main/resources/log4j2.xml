@@ -1,0 +1,13 @@
+<Configuration>
+  <Appenders>
+    <Console name="CONSOLE">
+      <JsonTemplateLayout locationInfoEnabled="false" eventTemplateUri="classpath:JsonLayout.json" />
+    </Console>
+  </Appenders>
+
+  <Loggers>
+    <Root level="DEBUG">
+      <AppenderRef ref="CONSOLE" />
+    </Root>
+  </Loggers>
+</Configuration>
